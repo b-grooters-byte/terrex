@@ -18,10 +18,12 @@ The hex map is made up of rows and columns the same as a grid square map. There 
 
 Hit testing the hex map for user interactions such as cell editing or selection is relatively simple. Initially we determine the candidate column and row using the column and row offsets for the map. 
 
-The most complex part of the hit test involves using a normal to determine what cell the user gestured occured in when the gesture is in the X overlap area of a cell.
+The most complex part of the hit test involves using a cross product to determine what cell the user gestured occured in when the gesture is in the X overlap area of a cell.
 
-![Normal](images/hexmap_01.png)
+![Normal](images/cross-product-01.png)
 
-We need to know the sign of the normal created by the (x,y) coordinates of the gesture to calculate what cell the gesture occured in. A positive (+) normal means that the gesture occurs in the next column if the Y coordinate is in the upper half of the current cell. Similarly a negative (-) normal indicates that the gesture occured in the next column in the lower half of the current cell.
+We need to know the sign of the cross product created by the (x,y) coordinates of the gesture to calculate what cell the gesture occured in. A negative (-) value means that the gesture occurs in the next column to thge right if the Y coordinate is in the upper half of the current cell. 
+
+Similarly a positive (+) value indicates that the gesture occured in the next column in the lower half of the current cell. 
 
 We need to be prepared to handle an input gesture in column -1 when the map viewport is at X=0 since the gesture could occur in what would be the X overlap area for that column.
