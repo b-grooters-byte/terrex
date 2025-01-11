@@ -5,13 +5,14 @@ edition = "2021"
 
 
 [dependencies.windows]
+version = "0.59"
 path = "../windows-rs/crates/libs/windows"
 features = [
     "Foundation",
     "Foundation_Numerics",
     "Win32_System_SystemInformation",
     "Win32_Foundation",
-    "Win32_System_Performance", 
+    "Win32_System_Performance",
     "Win32_System_Com",
     "Win32_System_LibraryLoader",
     "Win32_UI_WindowsAndMessaging",
@@ -24,4 +25,5 @@ features = [
     "Win32_Graphics_Direct3D11",
     "Win32_Graphics_Dxgi",
     "Win32_Graphics_Dxgi_Common",
+    "Win32_Graphics_Imaging",
 ]
