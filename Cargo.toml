@@ -6,7 +6,6 @@ edition = "2021"
 
 [dependencies.windows]
 version = "0.59"
-path = "../windows-rs/crates/libs/windows"
 features = [
     "Foundation",
     "Foundation_Numerics",
